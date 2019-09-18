@@ -1,4 +1,4 @@
-# image-gallery-modal
+# Image Gallery Modal
 A self-contained collection of HTML, CSS, and JS that can be added to a webpage to create *a simple, responsive image gallery overlay* on click. It's written without any additional libraries or frameworks.
 
 ## Why I made this
@@ -20,5 +20,10 @@ The modal is what I consider the essentials, though it is possible what I think 
 
 ## How to use 
 
+
+## Things to note
+* If your webpage has html classes prefixed with `.gallery-modal` or `.modal`, be sure to check that there is no overlap between the classes you already wrote and the classes found in this project. 
+* The overlay, i.e. `.gallery-modal-container`, should have a z-index value greater than all elements it should appear in front (on top) of. If you didn't specify the z-index of any elements on your webpage, you can leave the value as is (z-index: 100).
+
 ## Future changes & additions
-2. Maybe have two sets, one for a version where [A] the module builds the gallery from scratch, and [B] one where it controls only the modals, and overlays it on top of the webpage.
+1. Maybe have two sets, one for a version where [A] the module builds the gallery from scratch, and [B] one where it controls only the modals, and overlays it on top of the webpage (currently functionality as of 9/2019)
