@@ -11,7 +11,7 @@ The modal is what I consider the essentials, though it is possible what I think 
 * an enlarged view of the image clicked
 * a button to close the overlay
 * buttons to navigate to the previous and next image in the gallery
-* an index to show what image out of x total you are currently viewing
+* ~~an index to show what image out of x total you are currently viewing~~
 * supports arrow key navigation
 
 ## Contained files
@@ -25,7 +25,7 @@ The modal is what I consider the essentials, though it is possible what I think 
 
 ## Things to note
 * If your webpage has html classes prefixed with `.gallery-modal` or `.modal`, be sure to check that there is no overlap between the classes you already wrote and the classes found in this project. 
-* The overlay, i.e. `.gallery-modal-container`, should have a z-index value greater than all elements it should appear in front (on top) of. If you didn't specify the z-index of any elements on your webpage, you can leave the value as is (z-index: 100).
-* If you wish to change the background color, look in `.gallery-modal-container`. For text color, adjust the values in the `.gallery-modal-button` or `h3` selectors.
+* The overlay, i.e. `.gallery-modal-container`, should have a z-index value greater than all elements it should appear in front (on top) of. If you didn't specify the z-index of any elements on your webpage, you can leave the value as is (`z-index: 100`).
+* If you wish to change the background color, look in `.gallery-modal-container`. For text color, adjust the values in the `.gallery-modal-button` selector.
 * The button controls on the modal may appear small if the webpage is not pixel-density independent. Try including a rule like `<meta name="viewport" content="width=device-width, initial-scale=1.0">` to make the modal more responsive.
 ## Future changes & additions
