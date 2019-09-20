@@ -1,6 +1,9 @@
-function run() {
-	//save the NodeList of all gallery images globally
-	const galleryImages = document.querySelectorAll('.gallery-modal-ready img');
+/* Include this file at the bottom of your webpage, AFTER the elements you wish the modal to run on, so it runs only after the DOM elements have loaded 
+ * ex: <script src="yourfolder/gallery-modal-scripts.js"></script>
+ *
+ */
+const imageGalleryModal = (function(){
+	//----------- Initialization & Global variables ----------
 
 	//gallery is closed by default, and so no valid image index is available
 	let currentImageIndex = -1;
@@ -8,44 +11,45 @@ function run() {
 	// event listener; also support arrow key navigation
 	// not sure if this works with <picture> elements
 	document.querySelector('.gallery-modal-ready').addEventListener('click', evt => openGalleryModal(evt));
-}
 
-// in case the document is already rendered
-if (document.readyState!='loading') run();
-// modern browsers
-else if (document.addEventListener) document.addEventListener('DOMContentLoaded', run);
-// IE <= 8
-else document.attachEvent('onreadystatechange', function(){
-    if (document.readyState=='complete') run();
-});
+	//---------- Helper Functions ----------------
+	const openGalleryModal = function(evt) {
+		if(!(evt.target.nodeName === 'IMG')) return;
 
-function openGalleryModal(evt) {
-	if(!(evt.target.nodeName === 'IMG')) return;
+		loadGalleryImage(evt);
+		document.querySelector('.gallery-modal-container').style.display = 'block';
+		console.log(currentImageIndex);
+	};
 
-	document.querySelector('#gallery-modal-image').src = evt.target.src;
-	document.querySelector('.gallery-modal-container').style.display = 'block';
-}
+	const closeGalleryModal = function() {
+		document.querySelector('.gallery-modal-container').style.display = 'none';
+	};
 
-function closeGalleryModal() {
+	const prevGalleryImage = function() {
 
-}
+	};
 
-function nextGalleryImage() {
+	const nextGalleryImage = function() {
 
-}
+	};
 
-function loadGalleryImage() {
+	const loadGalleryImage = function(e) {
+		document.querySelector('#gallery-modal-image').src = e.target.src;
+	};
 
-}
+	const updateGalleryIndex = function() {
 
-function prevGalleryImage() {
+	};
 
-}
+	const updateModalTabindex = function() {
 
-function updateGalleryIndex(index, totalCount) {
+	};
 
-}
-
-function updateModalTabindex() {
-
-}
+	//public functions for the modal html to use
+	return {
+		openGalleryModal: openGalleryModal,
+		closeGalleryModal: closeGalleryModal,
+		prevGalleryImage: prevGalleryImage,
+		nextGalleryImage: nextGalleryImage
+	}
+}());
