@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+* {
+	font-family: 'Muli', sans-serif;
+}
+h1 {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #97fae4;
+	margin-bottom: 4px;
+}
+h2 {
+	text-align: center;
+	color: #e72d80;
+}
+h3 {
+	text-align: left;
+	color: #e72d80;
+	margin: auto;
+}
+article img {
+	width: 100%;
+	margin: 0 0 3px;
+}
+
+/* determines icon size */
+header {
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 50px;
+}
+.icon {
+	color:#34b89a;
+	padding: 0 20px;
+}
+
+/* gallery specific classes */
+.gallery {
+	display: flex;
+	flex-flow: column;
+}
+.gallery-header {
+	position: sticky;
+	top: 0;
+	padding: 10px 0;
+	box-shadow: 1px 5px 15px -6px #0d0305;
+	background-color: white;
+}
+.sidebar {
+	display: flex;
+	flex-flow: column;
+	box-shadow: 5px 0 10px -3px #0d0305;
+}
+.displayed {
+	display: block;
+}
+.hidden {
+	display: none;
+}
+
+/* sidebar navigation */
+.openButton {
+	color: #f54269;
+	border: none;
+	background-color: inherit;
+	transition: .2s;
+}
+.openButton:hover {
+	color: #b31d51;
+}
+.sidebar {
+	height: 100%;
+	width: 0; /* change with js */
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #1f1f24;
+	overflow-x: hidden; /* disable horizontal scroll */
+	transition: 0.4s;
+	opacity: .97;
+}
+.sidebar button {
+	padding: 20px 5px 20px;
+	border: none;
+	font-size: 23px;
+	color: #e72d80;
+	background-color: #1f1f24;
+	text-align: left;
+	white-space: pre;
+}
+.sidebar button:hover {
+	background-color: #3b1f2b;
+}
+.sidebar .closeButton {
+	font-size: 45px;
+	text-align: right;
+	padding: 0 10px 0 0;
+}
+
+/* about me specific classes*/
+.aboutme-body {
+	width: 80%;
+	margin: 0 auto 30px;
+	box-shadow: 3px 5px 10px -3px #0d0305;
+	padding: 20px;
+}
+.profile {
+	width: 100%;
+}
+
+/*====== Full layout ======*/
+@media screen and (min-width:700px) {
+	h1 {
+		font-size: 55px;
+	}
+	article img {
+		width: 49.5%;
+		object-fit: cover;
+	}
+	.gallery {
+		flex-flow: row wrap;
+		justify-content: space-around;
+	}
+	.aboutme-body {
+		min-width: 547px;
+		max-width: 600px;
+	}
+}
+@media screen and (min-width:900px) {
+	article img {
+		width: 33%;
+	}
+}
+@media screen and (min-width:1200px) {
+	.aboutme-body {
+		width: 600px;
+	}
+	article img {
+		width: 24.75%;
+	}
+}
+@media screen and (min-width:1500px) {
+	.gallery {
+		width: 1500px;
+		margin: auto;
+	}
+}
