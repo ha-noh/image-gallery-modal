@@ -14,18 +14,20 @@ The modal is what I consider the essentials, though it is possible what I think 
 * a button to close the overlay
 * buttons to navigate to the previous and next image in the gallery
 * ~~an index to show what image out of x total you are currently viewing~~
-* supports arrow key navigation
+* supports arrow key (left and right) navigation and esc keystroke to close
 
 ## Contained files
 * gallery-modal-overlay.html
 * gallery-modal-scripts.js
 * gallery-modal-style.css
 
-## How to use 
+## Set-up
 1. Add the `.gallery-modal-ready` class to the element containing all of the images you want the gallery modal to apply to 
+2. Copy the contents of gallery-modal-overlay.html into your webpage, including the `<link>` tag that refers to gallery-modal-style.css
+3. Add a `<script>` tag with its src pointing to gallery-modal-scripts.js at the bottom of your webpage
 
 
-## Things to note
+## Notes & Possible issues
 * If your webpage has html classes prefixed with `.gallery-modal` or `.modal`, be sure to check that there is no overlap between the classes you already wrote and the classes found in this project. 
 * **If your webpage removes or inserts images dynamically, the variable `galleryImages` in gallery-modal-scripts.js has to be moved from the topmost scope** to a local variable in each of the functions it appears in.
 * The overlay, i.e. `.gallery-modal-container`, should have a z-index value greater than all elements it should appear in front (on top) of. If you didn't specify the z-index of any elements on your webpage, you can leave the value as is (`z-index: 100`).

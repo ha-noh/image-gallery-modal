@@ -6,12 +6,25 @@ const imageGalleryModal = (function(){
 	//gallery is closed by default, and so no valid image index is available
 	let currentImageIndex = -1;
 
-	// event listener; also support arrow key navigation
 	// not sure if this works with <picture> elements
 	document.querySelector('.gallery-modal-ready').addEventListener('click', evt => openGalleryModal(evt));
 
+	// event listener; lets arrows keys handle gallery navigation and esc close the modal
+	document.addEventListener('keyup', function(e) {
+	    var allowedKeys = {
+	        37: 'left',
+	        39: 'right',
+	        27: 'esc'
+	    };
+
+	    handleInput(allowedKeys[e.keyCode]);
+	});
+
+	/* Move this variable down to local function scopes if your webpage dynamically
+	 * adds or removes images from the DOM.
+	 */
 	const galleryImages = document.querySelectorAll('.gallery-modal-ready img');
-	
+
 	//---------- Helper Functions ----------------
 	const openGalleryModal = function(evt) {
 		if(!(evt.target.nodeName === 'IMG')) return;
@@ -52,6 +65,21 @@ const imageGalleryModal = (function(){
 	const openGalleryImage = function() {
 		let currentImgSrc = galleryImages.item(currentImageIndex).src;
 		document.querySelector('#gallery-modal-image').src = currentImgSrc;
+	}
+
+	const handleInput = function(keystroke) {
+		if(currentImageIndex == -1) return;
+		switch(keystroke) {
+			case 'left':
+				prevGalleryImage();
+				break;
+			case 'right':
+				nextGalleryImage();
+				break;
+			case 'esc':
+				closeGalleryModal();
+				break; 
+		}
 	}
 
 	//optional function for adjusting modal content to reflect the image index, e.g. displaying 2 / 5 
