@@ -7,7 +7,7 @@ const imageGalleryModal = (function(){
 	let currentImageIndex = -1;
 
 	// not sure if this works with <picture> elements
-	document.querySelector('.gallery-modal-ready').addEventListener('click', evt => openGalleryModal(evt));
+	document.querySelector('.gallery-modal-ready').addEventListener('click', e => openGalleryModal(e));
 
 	// event listener; lets arrows keys handle gallery navigation and esc close the modal
 	document.addEventListener('keyup', function(e) {
@@ -26,10 +26,10 @@ const imageGalleryModal = (function(){
 	const galleryImages = document.querySelectorAll('.gallery-modal-ready img');
 
 	//---------- Helper Functions ----------------
-	const openGalleryModal = function(evt) {
-		if(!(evt.target.nodeName === 'IMG')) return;
+	const openGalleryModal = function(e) {
+		if(!(e.target.nodeName === 'IMG')) return;
 
-		loadGalleryImage(evt);
+		loadGalleryImage(e);
 		document.querySelector('.gallery-modal-container').style.display = 'block';
 	};
 
@@ -84,10 +84,6 @@ const imageGalleryModal = (function(){
 
 	//optional function for adjusting modal content to reflect the image index, e.g. displaying 2 / 5 
 	const updateGalleryIndex = function() {
-
-	};
-
-	const updateModalTabindex = function() {
 
 	};
 

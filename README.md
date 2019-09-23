@@ -22,15 +22,16 @@ The modal contains only what I consider the essentials, though it is possible th
 ## Set-up
 1. Add the `.gallery-modal-ready` class to the element containing all of the images you want the gallery modal to apply to. *All* the images within this container will be given modal functionality.
 2. Copy the contents of gallery-modal.html into your webpage, including the `<link>` tag that refers to gallery-modal-style.css.
-3. Add a `<script>` tag with its src pointing to gallery-modal-scripts.js at the bottom of your webpage to prevent the code from running before the DOM is loaded.
+3. Add a `<script>` tag, with its src pointing to gallery-modal-scripts.js, at the bottom of your webpage to prevent the code from running before the DOM is loaded.
 
 
-## Notes & Possible issues
+## Usage Notes & Possible issues
 * If your webpage has html classes prefixed with `.gallery-modal` or `.modal`, be sure to check that there is no overlap between the classes you already wrote and the classes found in this project. 
 * **If your webpage removes or inserts images dynamically, the variable `galleryImages` in gallery-modal-scripts.js has to be moved down from the topmost scope** to a local variable in each of the functions it appears in.
 * Currently there is no way to exempt an image from having the modal applied if it's contained in the div marked with the `.gallery-modal-ready` class.
+* All imgs contained within elements marked with `.gallery-modal-ready` will be compiled into a single gallery. Therefore, if you have a gallery for concept art, 3D models, and paintings (for example), if you want each to have their own separate modal you would have to implement some code to mark only the active gallery with the `.gallery-modal-ready` class.
 * The overlay, i.e. `.gallery-modal-container`, should have a z-index value greater than all elements it should appear in front (on top) of. If you didn't specify the z-index of any elements on your webpage, you can leave the value as is (`z-index: 100`).
-* If you wish to change the background color, look in `.gallery-modal-container`. For text color, adjust the values in the `.gallery-modal-button` selector.
+* If you wish to change the background color, look in `.gallery-modal-container`. For text/button color, adjust the values in the `.gallery-modal-button` selector.
 * The button controls on the modal may appear small if the webpage is not pixel-density independent. Try including a rule like `<meta name="viewport" content="width=device-width, initial-scale=1.0">` to make the modal more responsive.
 
 ## Future changes & additions
