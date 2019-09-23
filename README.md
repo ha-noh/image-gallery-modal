@@ -25,7 +25,6 @@ The modal contains only what I consider the essentials, though it is possible th
 3. Include a stylesheet `<link>` tag in your webpage's head that links to the location of your gallery-modal-style.css.
 3. Add a `<script>` tag, with its src pointing to your gallery-modal-scripts.js, **at the bottom** of your webpage's HTML (i.e. right before the closing `</body>` tag) to prevent the code from running before the DOM is loaded.
 
-
 ## Usage Notes & Possible issues
 * If your webpage has html classes prefixed with `.gallery-modal` or `.modal`, be sure to check that there is no overlap between the classes you already wrote and the classes found in this module. 
 * **If your webpage removes or inserts images dynamically, the variable `galleryImages` in gallery-modal-scripts.js has to be moved down from the topmost scope** to a local variable in each of the functions it appears in.
@@ -35,4 +34,5 @@ The modal contains only what I consider the essentials, though it is possible th
 * If you wish to change the background color, look in `.gallery-modal-container`. For text/button color, adjust the values in the `.gallery-modal-button` selector.
 * The button controls on the modal may appear small if the webpage is not pixel-density independent. Try including a rule like `<meta name="viewport" content="width=device-width, initial-scale=1.0">` to make the modal, and your webpage, more responsive.
 
-## Future changes & additions
+## Demo
+https://imgur.com/a/SXGo1nz
