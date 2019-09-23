@@ -31,6 +31,7 @@ const imageGalleryModal = (function(){
 
 		loadGalleryImage(e);
 		document.querySelector('.gallery-modal-container').style.display = 'block';
+		document.querySelector('.gallery-modal-container').focus();
 	};
 
 	const closeGalleryModal = function() {

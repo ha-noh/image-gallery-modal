@@ -21,8 +21,9 @@ The modal contains only what I consider the essentials, though it is possible th
 
 ## Set-up
 1. Add the `.gallery-modal-ready` class to the element containing all of the images you want the gallery modal to apply to. *All* the images within this container will be given modal functionality.
-2. Copy the contents of gallery-modal.html into your webpage, including the `<link>` tag that refers to gallery-modal-style.css.
-3. Add a `<script>` tag, with its src pointing to gallery-modal-scripts.js, at the bottom of your webpage to prevent the code from running before the DOM is loaded.
+2. Copy the contents of gallery-modal.html into your webpage, preferably at the top of the HTML document to reflect where it will appear when rendered. 
+3. Include a stylesheet `<link>` tag that links to the location of your gallery-modal-style.css.
+3. Add a `<script>` tag, with its src pointing to your gallery-modal-scripts.js, at the bottom of your webpage to prevent the code from running before the DOM is loaded.
 
 
 ## Usage Notes & Possible issues

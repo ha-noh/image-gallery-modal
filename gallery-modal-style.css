@@ -1,3 +1,5 @@
+/* Include this file as a stylesheet <link> in your webpage */
+
 @charset "utf-8";
 
 .gallery-modal-container {
@@ -9,6 +11,9 @@
 	z-index: 100;
 	background-color: rgba(31,31,36,.97);
 	display: none;
+}
+.gallery-modal-container:focus {
+	outline: none; /*remove outline because the modal container it's not important that the modal itself is in focus*/
 }
 .gallery-modal-button {
 	border: none;
@@ -47,18 +52,3 @@
 	/*width: auto;
 	height: auto;*/
 }
-
-/*.gallery-modal-index {
-	position: absolute;
-	color: #34b89a;
-	text-align: center;
-	top: 50%;
-	left: 50%;
-  	transform: translate(-50%, -50%);
-  	font-size: 100px;
-  	z-index: 1;
-  	display: none;
-}
-#gallery-modal-image:hover + .gallery-modal-index, .gallery-modal-index:hover{
-	display: inline;
-}*/
