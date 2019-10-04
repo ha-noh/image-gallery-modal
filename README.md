@@ -36,4 +36,4 @@ The modal contains only what I consider the essentials, though it is possible th
 * The button controls on the modal may appear small if the webpage is not pixel-density independent. Try including a rule like `<meta name="viewport" content="width=device-width, initial-scale=1.0">` to make the modal, and your webpage, more responsive.
 
 ## Demo
-https://imgur.com/a/SXGo1nz
+https://imgur.com/a/SXGo1nz for a gif of it in action, or run a local server from the project's directory and open the `demo/demo.html` file.
