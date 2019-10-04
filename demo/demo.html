@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../gallery-modal-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(() => $('#modal-placeholder').load('../gallery-modal.html'));
+	</script>
+	<title>image gallery modal demo</title>
+</head>
+<body>
+	<div id="modal-placeholder"></div>
+	<ul class="gallery-modal-ready">
+		<li>
+			<img src="images/01.png">
+		</li>
+		<li>
+			<img src="images/02.png">
+		</li>
+		<li>
+			<img src="images/03.png">
+		</li>
+		<li>	
+			<img src="images/04.png">
+		</li>
+	</ul>
+	<script src="../gallery-modal-scripts.js"></script>
+</body>
+</html>

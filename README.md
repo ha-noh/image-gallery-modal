@@ -27,7 +27,7 @@ The modal contains only what I consider the essentials, though it is possible th
 
 ## Usage Notes & Possible issues
 * The image visible in the modal has the same source as the image being clicked on - if you are using a lower resolution version of your image as a thumbnail or as a responsive element, the module won't work the way it was intended (it will just display a tiny picture).
-* If your webpage has html classes prefixed with `gallery-modal` or `modal`, be sure to check that there is no overlap between the classes you already wrote and the classes found in this module. 
+* Be wary of the webpage's css from overwriting or conflicting with this module's. If your webpage has html classes prefixed with `gallery-modal` or `modal`, be sure to check that there is no overlap between the classes you already wrote and the classes found in this module. Make sure you don't have broad css element selectors like `img { ... }` which will override the module. 
 * **If your webpage removes or inserts images dynamically, the variable `galleryImages` in gallery-modal-scripts.js has to be moved down from the topmost scope** to a local variable in each of the functions it appears in.
 * Currently there is no way to exempt an image from having the modal applied if it's contained in the div marked with the `gallery-modal-ready` class.
 * Furthermore, all imgs contained within divs marked with `gallery-modal-ready` will be compiled into a single gallery. Therefore, if you have (for example) 3 divs on a single page for concept art, 3D models, and paintings, they will all share a single modal. If you want each to have their own separate modal, you would have to implement some code to mark only the active gallery with the `gallery-modal-ready` class.

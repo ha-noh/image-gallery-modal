@@ -1,0 +1,10 @@
+li img {
+	width: 100%;
+}
+
+@media screen and (min-width: 800px){
+	body {
+		max-width: 800px;
+		margin: auto;
+	}
+}
