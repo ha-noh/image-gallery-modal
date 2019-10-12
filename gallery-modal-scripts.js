@@ -1,14 +1,16 @@
-/* Include this file at the bottom of your webpage, AFTER the elements you wish the modal to run on, so it runs only after the DOM elements have loaded 
+/* Import this file at the bottom of your webpage, AFTER the elements you wish the modal to run on, so it runs only after the DOM elements have loaded 
  * ex: <script src="yourfolder/gallery-modal-scripts.js"></script>
  *
  */
 const imageGalleryModal = (function(){
 	//gallery is closed by default, and so no valid image index is available
 	let currentImageIndex = -1;
-
-	// not sure if this works with <picture> elements
+	//listen for user clicks on the modal buttons
+	document.querySelector('.modal-close-button').addEventListener('click', e => closeGalleryModal());
+	document.querySelector('.modal-prev-button').addEventListener('click', e => prevGalleryImage());
+	document.querySelector('.modal-next-button').addEventListener('click', e => nextGalleryImage());
+	//listen for user clicks on the gallery image container
 	document.querySelector('.gallery-modal-ready').addEventListener('click', e => openGalleryModal(e));
-
 	// event listener; lets arrows keys handle gallery navigation and esc close the modal
 	document.addEventListener('keyup', function(e) {
 	    var allowedKeys = {
@@ -88,7 +90,7 @@ const imageGalleryModal = (function(){
 
 	};
 
-	//public functions for the modal html to use
+	//publically accessible functions, unused in the base module
 	return {
 		openGalleryModal: openGalleryModal,
 		closeGalleryModal: closeGalleryModal,

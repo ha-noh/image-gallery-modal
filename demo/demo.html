@@ -6,9 +6,6 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="../gallery-modal-style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(() => $('#modal-placeholder').load('../gallery-modal.html'));
-	</script>
 	<title>image gallery modal demo</title>
 </head>
 <body>
@@ -27,6 +24,10 @@
 			<img src="images/04.png">
 		</li>
 	</ul>
+	<script>
+		//import gallery modal html from parent directory
+		$('#modal-placeholder').load('../gallery-modal.html');
+	</script>
 	<script src="../gallery-modal-scripts.js"></script>
 </body>
 </html>
