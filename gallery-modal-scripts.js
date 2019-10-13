@@ -16,7 +16,7 @@ const imageGalleryModal = (function(){
 
 	// event listener; lets arrows keys handle gallery navigation and esc close the modal
 	document.addEventListener('keyup', function(e) {
-	    var allowedKeys = {
+	    let allowedKeys = {
 	        37: 'left',
 	        39: 'right',
 	        27: 'esc'
