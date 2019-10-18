@@ -65,12 +65,14 @@ const imageGalleryModal = (function(){
 		for(let x = 0; x < galleryImages.length; x++) {
 			if(galleryImages.item(x).src == e.target.src) currentImageIndex = x;
 		}
+		updateGalleryIndex();
 	};
 
 	//opens an image from its index in the list of gallery images
 	const openGalleryImage = function() {
 		let currentImgSrc = galleryImages.item(currentImageIndex).src;
 		document.querySelector('#gallery-modal-image').src = currentImgSrc;
+		updateGalleryIndex();
 	}
 
 	const handleInput = function(keystroke) {
@@ -90,7 +92,9 @@ const imageGalleryModal = (function(){
 
 	//optional function for adjusting modal content to reflect the image index, e.g. displaying 2 / 5 
 	const updateGalleryIndex = function() {
-
+		const imageIndexString = `${currentImageIndex + 1} / ${galleryImages.length}`;
+		console.log(imageIndexString);
+		document.querySelector('.gallery-modal-index').innerHTML = imageIndexString;
 	};
 
 	//publically accessible functions, unused in the base module
