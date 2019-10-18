@@ -37,6 +37,7 @@
 	font-family: "Roboto", sans-serif;
 	height: 60px;
 	padding: 12px;
+	z-index: 1;
 }
 .modal-close-button {
 	position: absolute;
