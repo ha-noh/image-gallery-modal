@@ -3,10 +3,10 @@
 <!-- tabindex set to -1 because the container shouldn't be focusable in general cases, only when it's first opened to make its buttons immediately accessible -->
 <section class="gallery-modal-container" tabindex="-1">
 	<span class="gallery-modal-index"></span>
-	<button class="gallery-modal-button modal-close-button">×</button>
-	<button class="gallery-modal-button modal-prev-button">‹</button>
+	<button aria-label="close modal" class="gallery-modal-button modal-close-button">×</button>
+	<button aria-label="previous image" class="gallery-modal-button modal-prev-button">‹</button>
 	<img id="gallery-modal-image" src="">
-	<button class="gallery-modal-button modal-next-button">›</button>
+	<button aria-label="next image" class="gallery-modal-button modal-next-button">›</button>
 </section>
 
 

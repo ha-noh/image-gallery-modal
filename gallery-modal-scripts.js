@@ -94,7 +94,7 @@ const imageGalleryModal = (function(){
 	const updateGalleryIndex = function() {
 		const imageIndexString = `${currentImageIndex + 1} / ${galleryImages.length}`;
 		console.log(imageIndexString);
-		document.querySelector('.gallery-modal-index').innerHTML = imageIndexString;
+		document.querySelector('.gallery-modal-index').innerText = imageIndexString;
 	};
 
 	//publically accessible functions, unused in the base module
