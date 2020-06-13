@@ -1,8 +1,8 @@
-/* Import this file at the bottom of your webpage, AFTER the elements you wish the modal to run on, so it runs only after the DOM elements have loaded 
+/* Include this file at the bottom of your webpage, AFTER the elements you wish the modal to run on, so it runs only after the DOM elements have loaded 
  * ex: <script src="yourfolder/gallery-modal-scripts.js"></script>
  *
  */
-const imageGalleryModal = (function(){
+const imageGalleryModal = (function() {
 	//gallery is closed by default, and so no valid image index is available
 	let currentImageIndex = -1;
 
@@ -32,7 +32,8 @@ const imageGalleryModal = (function(){
 
 	//---------- Helper Functions ----------------
 	const openGalleryModal = function(e) {
-		if(!(e.target.nodeName === 'IMG')) return;
+		//end operation if click event target is not an image
+		if(e.target.nodeName !== 'IMG') return;
 
 		loadGalleryImage(e);
 		document.querySelector('.gallery-modal-container').style.display = 'block';
@@ -45,15 +46,17 @@ const imageGalleryModal = (function(){
 	};
 
 	const prevGalleryImage = function() {
-		//currently displaying the first image
+		//if displaying the first image, end operation
 		if(currentImageIndex == 0) return;
+
 		currentImageIndex--;
 		openGalleryImage();
 	};
 
 	const nextGalleryImage = function() {
-		//currently displaying the last image
+		//if displaying the last image, end operation
 		if(currentImageIndex + 1 ==  galleryImages.length) return;
+
 		currentImageIndex++;
 		openGalleryImage();
 	};
@@ -93,11 +96,10 @@ const imageGalleryModal = (function(){
 	//optional function for adjusting modal content to reflect the image index, e.g. displaying 2 / 5 
 	const updateGalleryIndex = function() {
 		const imageIndexString = `${currentImageIndex + 1} / ${galleryImages.length}`;
-		console.log(imageIndexString);
 		document.querySelector('.gallery-modal-index').innerText = imageIndexString;
 	};
 
-	//publically accessible functions, unused in the base module
+	//publically accessible functions
 	return {
 		openGalleryModal: openGalleryModal,
 		closeGalleryModal: closeGalleryModal,
