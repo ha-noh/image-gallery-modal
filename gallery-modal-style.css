@@ -1,5 +1,3 @@
-/* Include this file as a stylesheet <link> in your webpage */
-
 @charset "utf-8";
 
 .gallery-modal-container {
@@ -17,7 +15,7 @@
 }
 .gallery-modal-button {
 	border: none;
-	color: #97fae4;
+	color: white;
 	background-color: rgba(31,31,36,0); /*transparent background*/
 	font-size: 50px;
 	text-shadow: 1px 1px 4px white;
@@ -30,13 +28,13 @@
 	background-color: rgba(31,31,36,.75);
 }
 .gallery-modal-index {
-	position: absolute;
-	left: 0;
-	font-size: 30px;
-	color: #97fae4;
-	font-family: "Roboto", sans-serif;
-	height: 60px;
-	padding: 12px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 20px;
+	color: white;
+	text-shadow: 1px 1px black;
 	z-index: 1;
 }
 .modal-close-button {
@@ -56,9 +54,10 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-  	transform: translate(-50%, -50%);
-	max-width: 100vw;
+	transform: translate(-50%, -50%);
+  	max-width: 100vw;
 	max-height: 100vh;
 	/*width: auto;
 	height: auto;*/
+	transition: all 0.3s;
 }

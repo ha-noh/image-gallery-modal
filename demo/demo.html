@@ -6,16 +6,6 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="../gallery-modal-style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('#modal-placeholder').load('../gallery-modal.html');
-
-			//add scripts after the modal html has loaded
-			let script = document.createElement('script');
-			script.setAttribute('src',"../gallery-modal-scripts.js");
-			document.head.appendChild(script);
-		});
-	</script>
 	<title>image gallery modal demo</title>
 </head>
 <body>
@@ -35,4 +25,14 @@
 		</li>
 	</ul>
 </body>
+<script>
+	$(document).ready(function() {
+		$('#modal-placeholder').load('../gallery-modal.html');
+
+		//add scripts after the modal html has loaded
+		let script = document.createElement('script');
+		script.setAttribute('src',"../gallery-modal-scripts.js");
+		document.head.appendChild(script);
+	});
+</script>
 </html>
