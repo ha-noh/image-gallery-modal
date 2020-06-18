@@ -17,7 +17,7 @@
 	border: none;
 	color: white;
 	background-color: rgba(31,31,36,0); /*transparent background*/
-	font-size: 50px;
+	font-size: 40px;
 	text-shadow: 1px 1px 4px white;
 	z-index: 1;
 	height: 60px;
@@ -34,7 +34,7 @@
 	transform: translateX(-50%);
 	font-size: 20px;
 	color: white;
-	text-shadow: 1px 1px black;
+	text-shadow: 1px 1px 4px white;
 	z-index: 1;
 }
 .modal-close-button {
