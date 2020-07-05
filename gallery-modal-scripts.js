@@ -8,8 +8,16 @@ const imageGalleryModal = (function() {
 
 	//listen for user clicks on the modal buttons
 	document.querySelector('.modal-close-button').addEventListener('click', () => closeGalleryModal());
+	document.querySelector('.modal-close-button').addEventListener('focus', showFeaturesIfHidden);
+
 	document.querySelector('.modal-prev-button').addEventListener('click', () => prevGalleryImage());
+	document.querySelector('.modal-prev-button').addEventListener('focus', showFeaturesIfHidden);
+
 	document.querySelector('.modal-next-button').addEventListener('click', () => nextGalleryImage());
+	document.querySelector('.modal-next-button').addEventListener('focus', showFeaturesIfHidden);
+
+	document.querySelector('.gallery-modal-image').addEventListener('click', toggleModalFeatures);
+	document.querySelector('.gallery-modal-image').addEventListener('mouseout', showFeaturesIfHidden);
 	
 	// not sure if this works with <picture> elements
 	document.querySelector('.gallery-modal-ready').addEventListener('click', () => openGalleryModal(event));
@@ -25,12 +33,13 @@ const imageGalleryModal = (function() {
 	    handleInput(allowedKeys[e.keyCode]);
 	});
 
-	/* Move this variable down to local function scopes if your webpage dynamically
+	/* IMPORTANT:
+	 * Move this variable down to local function scopes if your webpage dynamically
 	 * adds or removes images from the DOM.
 	 */
 	const galleryImages = document.querySelectorAll('.gallery-modal-ready img');
 
-	//---------- Helper Functions ----------------
+	//------Exported Functions------
 	const openGalleryModal = function(e) {
 		//end operation if click event target is not an image
 		if(e.target.nodeName !== 'IMG') return;
@@ -72,6 +81,8 @@ const imageGalleryModal = (function() {
 			if(galleryImages.item(x).src == e.target.src) currentImageIndex = x;
 		}
 		imageIndexDidUpdate();
+
+		showFeaturesIfHidden();
 	};
 
 	//opens an image based on its index in the gallery image list
@@ -79,14 +90,38 @@ const imageGalleryModal = (function() {
 		let newImgSrc = galleryImages.item(currentImageIndex).src;
 		document.querySelector('.gallery-modal-image').src = newImgSrc;
 		imageIndexDidUpdate();
+
+		showFeaturesIfHidden();
 	}
 
+
+	//------Helper Functions------
 	function toggleGalleryImageFx() {
 		document.querySelector('.gallery-modal-image').classList.toggle('image-fx');
 	}
 
 	function toggleModalDisplay() {
 		document.querySelector('.gallery-modal-container').classList.toggle('modal-display');
+	}
+
+	//hides or shows all of the gallery modal buttons and the modal index
+	function toggleModalFeatures() {
+		let buttons = document.querySelectorAll('.gallery-modal-button');
+		for(const button of buttons) {
+			button.classList.toggle('modal-features-hide');
+		}
+		document.querySelector('.gallery-modal-index').classList.toggle('modal-features-hide');
+	}
+
+	function showFeaturesIfHidden() {
+		//no need to check every feature individually since they're always toggled together
+		let feature = document.querySelector('.gallery-modal-index');
+		//show features if they're currently hidden
+		if(feature.classList.contains('modal-features-hide')) {
+			toggleModalFeatures();
+			return true;
+		}
+		return false;
 	}
 
 	const handleInput = function(keystroke) {
@@ -104,7 +139,7 @@ const imageGalleryModal = (function() {
 		}
 	}
 
-	//optional function for adjusting modal content to reflect the image index, e.g. displaying 2 / 5 
+	//adjusts modal content to reflect the image index, e.g. displaying 2 / 5 
 	function imageIndexDidUpdate() {
 		const imageIndexString = `${currentImageIndex + 1} / ${galleryImages.length}`;
 		//console.log(imageIndexString);

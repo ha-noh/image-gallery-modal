@@ -19,25 +19,28 @@
 .gallery-modal-button {
 	border: none;
 	color: white;
-	background-color: rgba(31,31,36,0); /*transparent background*/
+	background-color: rgba(31,31,36,.9); /*transparent background*/
 	font-size: 40px;
 	text-shadow: 1px 1px 4px white;
 	z-index: 1;
 	height: 60px;
 	width: 45px;
+	transition: opacity .2s;
 }
-.gallery-modal-button:hover {
+.gallery-modal-button:hover, .gallery-modal-button:focus {
 	color: #e72d80;
-	background-color: rgba(31,31,36,.75);
 }
 .gallery-modal-index {
 	position: fixed;
 	bottom: 0;
 	left: 50%;
 	transform: translateX(-50%);
+	padding: 5px;
 	font-size: 20px;
 	color: white;
+	background-color: rgba(31,31,36,.7);
 	text-shadow: 1px 1px 4px white;
+	transition: opacity .2s;
 	z-index: 1;
 }
 .modal-close-button {
@@ -53,6 +56,9 @@
 	top: 50%;
 	right: 0;
 }
+.modal-features-hide {
+	opacity: 0;
+}
 .gallery-modal-image {
 	position: absolute;
 	top: 50%;
@@ -60,6 +66,8 @@
 	transform: translate(-50%, -50%);
 	max-width: 80vw;
 	max-height: 80vh;
+	/*width: auto;
+	height: auto;*/
 	transition: all .1s;
 	opacity: 0;
 }
