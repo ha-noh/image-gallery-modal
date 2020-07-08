@@ -52,7 +52,7 @@ const imageGalleryModal = (function() {
 
 	const closeGalleryModal = function() {
 		toggleGalleryImageFx();
-		setTimeout(toggleModalDisplay, 100);
+		setTimeout(toggleModalDisplay, 200);
 		currentImageIndex = -1;
 	};
 

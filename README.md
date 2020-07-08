@@ -37,3 +37,4 @@ The modal contains only what I consider the essentials, though it is possible th
 
 ## Demo
 https://imgur.com/a/SXGo1nz for a gif of it in action, or run a local server from the project's directory and open the `demo/demo.html` file.
+I also use a version of this module on my personal site, https://ha-noh.github.io/gallery.

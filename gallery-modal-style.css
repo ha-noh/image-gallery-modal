@@ -68,7 +68,7 @@
 	max-height: 80vh;
 	/*width: auto;
 	height: auto;*/
-	transition: all .1s;
+	transition: all .2s;
 	opacity: 0;
 }
 .image-fx.gallery-modal-image{ 
