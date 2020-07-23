@@ -19,6 +19,7 @@ const imageGalleryModal = (function() {
 	document.querySelector('.gallery-modal-image').addEventListener('click', toggleModalFeatures);
 	document.querySelector('.gallery-modal-image').addEventListener('mouseout', showFeaturesIfHidden);
 	
+	document.querySelector('.invisible-button').addEventListener('click', toggleModalFeatures);
 	// not sure if this works with <picture> elements
 	document.querySelector('.gallery-modal-ready').addEventListener('click', () => openGalleryModal(event));
 
