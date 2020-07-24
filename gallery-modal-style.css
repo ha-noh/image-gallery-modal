@@ -7,7 +7,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 100;
-	background-color: rgba(31,31,36,.97);
+	background-color: rgba(31,31,36,.85);
 	display: none;
 }
 .gallery-modal-container:focus {
@@ -17,44 +17,55 @@
 	display: block;
 }
 .gallery-modal-button {
-	border: none;
 	color: white;
 	background-color: rgba(31,31,36,.9); /*transparent background*/
-	font-size: 40px;
-	text-shadow: 1px 1px 4px white;
+	line-height: 30px;
+	font-size: 30px;
+	text-align: center;
+	padding: 0 0 5px;
+	/*text-shadow: 1px 1px 4px white;*/
 	z-index: 1;
-	height: 60px;
-	width: 45px;
+	height: 36px;
+	width: 36px;
 	transition: opacity .2s;
-}
-.gallery-modal-button:hover, .gallery-modal-button:focus {
-	color: #e72d80;
+	-moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(31,31,36,.9);
 }
 .gallery-modal-index {
 	position: fixed;
-	bottom: 0;
+	bottom: 5px;
 	left: 50%;
 	transform: translateX(-50%);
 	padding: 5px;
-	font-size: 20px;
+	font-size: 17px;
 	color: white;
+	border: 2px solid white;
+	-moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
 	background-color: rgba(31,31,36,.7);
-	text-shadow: 1px 1px 4px white;
+	/*text-shadow: 1px 1px 4px white;*/
 	transition: opacity .2s;
 	z-index: 1;
 }
 .modal-close-button {
 	position: absolute;
-	right: 0;
+	top: 10px;
+	right: 10px;
 }
 .modal-prev-button {
 	position: absolute;
 	top: 50%;
+	left: 10px;
 }
 .modal-next-button {
 	position: absolute;
 	top: 50%;
-	right: 0;
+	right: 10px;
 }
 .modal-features-hide {
 	opacity: 0;
@@ -70,8 +81,8 @@
 	opacity: 0;
 }
 .image-fx.gallery-modal-image { 
-	max-width: 100vw;
-	max-height: 100vh;
+	max-width: 90vw;
+	max-height: 90vh;
 	opacity: 1;
 }
 .invisible-button {
