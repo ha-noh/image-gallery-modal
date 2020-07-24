@@ -76,10 +76,14 @@
 }
 .invisible-button {
 	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 1px;
-	width: 1px;
+	bottom: 10px;
+	left: 10px;
+	height: 2px;
+	width: 2px;
 	border: none;
 	padding: 0;
+	opacity: 0;
+}
+.invisible-button:focus {
+	opacity: 1;
 }
