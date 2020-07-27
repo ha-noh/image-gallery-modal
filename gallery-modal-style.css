@@ -31,12 +31,12 @@
     cursor: pointer;
 	transition: opacity .2s;
     border: 2px solid white;
-    border-radius: 18px;
 	-moz-border-radius: 18px;
     -webkit-border-radius: 18px;
-    box-shadow: 3px 2px 3px #1F1F24;
+    border-radius: 18px;
     -moz-box-shadow: 3px 2px 3px #1F1F24;
     -webkit-box-shadow: 3px 2px 3px #1F1F24;
+    box-shadow: 3px 2px 3px #1F1F24;
 }
 .gallery-modal-index {
 	z-index: 1;
@@ -49,12 +49,12 @@
 	color: white;
 	border: 2px solid white;
 	background-color: rgba(31,31,36,.7);
-    border-radius: 20px;
 	-moz-border-radius: 20px;
     -webkit-border-radius: 20px;
-	box-shadow: 3px 2px 3px #1F1F24;
+    border-radius: 20px;
 	-moz-box-shadow: 3px 2px 3px #1F1F24;
 	-webkit-box-shadow: 3px 2px 3px #1F1F24;
+	box-shadow: 3px 2px 3px #1F1F24;
 	transition: opacity .2s;
 }
 .modal-close-button {
@@ -86,12 +86,12 @@
 	opacity: 0;
 	background-color: #1F1F24;
 	border: 3px solid #1F1F24;
-    border-radius: 5px;
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-	box-shadow: 3px 3px 4px #1F1F24;
+    border-radius: 5px;
 	-moz-box-shadow: 3px 3px 4px #1F1F24;
 	-webkit-box-shadow: 3px 3px 4px #1F1F24;
+	box-shadow: 3px 3px 4px #1F1F24;
 }
 .image-fx.gallery-modal-image { 
 	max-width: 90vw;
