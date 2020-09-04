@@ -18,22 +18,48 @@
 .gallery-modal-button {
 	color: white;
 	background-color: #2E2E36; 
-	line-height: 30px;
-	font-size: 30px;
+	line-height: 25px;
+	font-size: 25px;
 	text-align: center;
-	padding: 0 0 5px;
+	padding: 0 0 3px;
 	z-index: 1;
-	height: 36px;
-	width: 36px;
+	height: 40px;
+	width: 40px;
     cursor: pointer;
 	transition: opacity .2s;
     border: 2px solid white;
-	-moz-border-radius: 18px;
-    -webkit-border-radius: 18px;
-    border-radius: 18px;
+	-moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
     -moz-box-shadow: 2px 2px 4px 2px #17171C;
     -webkit-box-shadow: 2px 2px 4px 2px #17171C;
     box-shadow: 2px 2px 4px 2px #17171C;
+}
+.gallery-modal-button:focus, .gallery-modal-button:hover {
+	animation-name: buttonFocus;
+	animation-duration: .15s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+@keyframes buttonFocus {
+	from {
+		height: 40px;
+		width: 40px;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		border-radius: 20px;
+		line-height: 25px;
+		font-size: 25px;
+	}
+	to {
+		height: 44px;
+		width: 44px;
+		-moz-border-radius: 22px;
+    	-webkit-border-radius: 22px;
+    	border-radius: 22px;
+    	line-height: 27px;
+		font-size: 27px;
+	}
 }
 .gallery-modal-index {
 	z-index: 1;

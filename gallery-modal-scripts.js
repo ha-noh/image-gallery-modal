@@ -1,6 +1,5 @@
 /* Include this file at the bottom of your webpage, AFTER the elements you wish the modal to run on, so it runs only after the DOM elements have loaded 
  * ex: <script src="yourfolder/gallery-modal-scripts.js"></script>
- *
  */
 const imageGalleryModal = (function() {
 	//gallery is closed by default, and so no valid image index is available
