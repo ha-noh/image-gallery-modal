@@ -125,7 +125,9 @@ const imageGalleryModal = (function() {
 	}
 
 	const handleInput = function(keystroke) {
+		//if the modal isn't open, exit
 		if(currentImageIndex == -1) return;
+		
 		switch(keystroke) {
 			case 'left':
 				prevGalleryImage();
