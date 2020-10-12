@@ -1,5 +1,5 @@
 # Image Gallery Modal
-A self-contained module of HTML, CSS, and JavaScript that can be added to a webpage to create **a simple, responsive image gallery overlay** on click. It's written without any additional libraries or frameworks. Note: I will use the word "modal" and "overlay" interchangeably in this file - mostly because I'm not sure which term would be more meaningful to the reader.
+A plug-and-play module that turns any webpage's images into a functional modal gallery; it's as simple as adding a single css class to your div. It is self-contained and wrtten with vanilla HTML, CSS, and JavaScript - no additional libraries or frameworks.
 
 ## Why I made this
 While there are plenty of tutorials and examples of what I'll refer to as 'image galleries' (code that opens a modal window with a larger view when an image is clicked), the ones that I found weren't quite modular or customizable enough for my personal needs. The goal is for this module to be flexible and usable in any webpage. 
