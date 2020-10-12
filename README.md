@@ -1,5 +1,5 @@
 # Image Gallery Modal
-A plug-and-play module that turns any webpage's images into a functional modal gallery; it's as simple as adding a single css class to your div. It is self-contained and wrtten with vanilla HTML, CSS, and JavaScript - no additional libraries or frameworks.
+A plug-and-play module that turns any webpage's images into a functional modal gallery via a single HTML class. It is self-contained and written with vanilla HTML, CSS, and JavaScript with no additional libraries or frameworks.
 
 ## Why I made this
 While there are plenty of tutorials and examples of what I'll refer to as 'image galleries' (code that opens a modal window with a larger view when an image is clicked), the ones that I found weren't quite modular or customizable enough for my personal needs. The goal is for this module to be flexible and usable in any webpage. 
