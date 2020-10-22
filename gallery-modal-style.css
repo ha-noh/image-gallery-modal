@@ -1,5 +1,5 @@
 @charset "utf-8";
-.gallery-modal-container {
+.gallery-modal__container {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -9,13 +9,13 @@
 	background-color: rgba(31,31,36,.85);
 	display: none;
 }
-.gallery-modal-container:focus {
+.gallery-modal__container:focus {
 	outline: none; /*remove outline because the modal container it's not important that the modal itself is in focus*/
 }
-.modal-display{
+.gallery-modal_display {
 	display: block;
 }
-.gallery-modal-button {
+.gallery-modal__button {
 	color: white;
 	background-color: #2E2E36; 
 	line-height: 25px;
@@ -35,7 +35,7 @@
     -webkit-box-shadow: 2px 2px 4px 2px #17171C;
     box-shadow: 2px 2px 4px 2px #17171C;
 }
-.gallery-modal-button:focus, .gallery-modal-button:hover {
+.gallery-modal__button:focus, .gallery-modal__button:hover {
 	animation-name: buttonfocus;
 	animation-duration: .15s;
 	animation-timing-function: ease-out;
@@ -49,7 +49,7 @@
 		background-color: #6b6b7a; 
 	}
 }
-.gallery-modal-index {
+.gallery-modal__index {
 	z-index: 1;
 	position: fixed;
 	bottom: 5px;
@@ -68,25 +68,25 @@
 	box-shadow: 2px 2px 4px 2px #17171C;
 	transition: opacity .2s;
 }
-.modal-close-button {
+.gallery-modal__button_close {
 	position: absolute;
 	top: 10px;
 	right: 10px;
 }
-.modal-prev-button {
+.gallery-modal__button_prev {
 	position: absolute;
 	top: 50%;
 	left: 10px;
 }
-.modal-next-button {
+.gallery-modal__button_next {
 	position: absolute;
 	top: 50%;
 	right: 10px;
 }
-.modal-features-hide {
+.gallery-modal_hide-features {
 	opacity: 0;
 }
-.gallery-modal-image {
+.gallery-modal__image {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -114,12 +114,12 @@
 		left: 50%;
 	}
 }
-.image-fx.gallery-modal-image { 
+.gallery-modal_image-fx.gallery-modal__image { 
 	max-width: 90vw;
 	max-height: 90vh;
 	opacity: 1;
 }
-.invisible-button {
+.gallery-modal__button_invisible {
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
@@ -129,6 +129,6 @@
 	padding: 0;
 	opacity: 0;
 }
-.invisible-button:focus {
+.gallery-modal__button_invisible:focus {
 	opacity: 1;
 }
