@@ -91,8 +91,8 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	max-width: 80vw;
-	max-height: 80vh;
+	max-width: 75vw;
+	max-height: 75vh;
 	transition: all .2s;
 	opacity: 0;
 	background-color: #2E2E36;
@@ -131,4 +131,45 @@
 }
 .gallery-modal__button_invisible:focus {
 	opacity: 1;
+}
+
+@media screen and (min-width: 2000px) {
+	.gallery-modal__button {
+		height: 60px;
+		width: 60px;
+		line-height: 30px;
+		font-size: 30px;
+		border: 3px solid white;
+		-moz-border-radius: 30px;
+		-webkit-border-radius: 30px;
+		border-radius: 30px;
+	}
+	.gallery-modal__index {
+		padding: 10px;
+		font-size: 25px;
+		border: 3px solid white;
+		-moz-border-radius: 30px;
+		-webkit-border-radius: 30px;
+		border-radius: 30px;
+	}
+}
+@media screen and (min-width: 2600px) {
+	.gallery-modal__button {
+		height: 100px;
+		width: 100px;
+		line-height: 50px;
+		font-size: 50px;
+		border: 5px solid white;
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 50px;
+	}
+	.gallery-modal__index {
+		padding: 20px;
+		font-size: 35px;
+		border: 5px solid white;
+		-moz-border-radius: 45px;
+		-webkit-border-radius: 45px;
+		border-radius: 45px;
+	}
 }
