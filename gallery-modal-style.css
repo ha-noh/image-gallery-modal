@@ -16,6 +16,7 @@
 	display: block;
 }
 .gallery-modal__button {
+	z-index: 1; /* keeps buttons above image */
 	color: white;
 	background-color: #2E2E36; 
 	line-height: 25px;
@@ -50,6 +51,7 @@
 }
 .gallery-modal__index {
 	position: fixed;
+	z-index: 1; /* keeps index above image */
 	bottom: 5px;
 	left: 50%;
 	transform: translateX(-50%);
