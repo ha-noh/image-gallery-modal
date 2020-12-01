@@ -5,20 +5,17 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="../gallery-modal-style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<title>image gallery modal demo</title>
 </head>
 <body>
-	<div id="modal-placeholder">
-		<section aria-label="modal overlay" class="gallery-modal-container" tabindex="-1">
-			<button aria-label="close modal overlay" class="gallery-modal-button modal-close-button">×</button>
-			<button aria-label="previous image" class="gallery-modal-button modal-prev-button">‹</button>
-			<img class="gallery-modal-image" src="">
-			<button aria-label="next image" class="gallery-modal-button modal-next-button">›</button>
-			<button aria-label="toggle visibility for modal buttons" class="invisible-button"></button>
-			<span class="gallery-modal-index"></span>
-		</section>
-	</div>
+	<section aria-label="modal overlay" class="gallery-modal__container" tabindex="-1">
+		<button aria-label="close modal overlay" class="gallery-modal__button gallery-modal__button_close">×</button>
+		<button aria-label="previous image" class="gallery-modal__button gallery-modal__button_prev">‹</button>
+		<img class="gallery-modal__image" src="">
+		<button aria-label="next image" class="gallery-modal__button gallery-modal__button_next">›</button>
+		<button aria-label="toggle visibility for modal buttons" class="gallery-modal__button_invisible"></button>
+		<span class="gallery-modal__index"></span>
+	</section>
 	<ul class="gallery-modal-ready">
 		<li>
 			<img src="images/01.png">
@@ -34,18 +31,5 @@
 		</li>
 	</ul>
 </body>
-<script>
-	$(document).ready(function() {
-		//broken so I put the html that's supposed to be loaded into #modal-placeholder
-		$('#modal-placeholder').load('../gallery-modal.html', insertScript);
-	});
-
-	function insertScript() {	
-		console.log('reached insertScript()');
-		//add scripts after the modal html has loaded
-		let script = document.createElement('script');
-		script.setAttribute('src',"../gallery-modal-scripts.js");
-		document.head.appendChild(script);
-	}
-</script>
+<script src="../gallery-modal-scripts.js"></script>
 </html>
