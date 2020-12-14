@@ -1,13 +1,10 @@
-/* TODO: 
- * (1) Find a more efficient solution for determining the gallery index number (faster than linear runtime)
- *
- * HOW TO USE: 
+/* HOW TO USE: 
  * (1) Add the "gallery-modal-ready" HTML class to the HTML element that contains the images you wish to affect.
  * (2) Include this file as a script element at the bottom of your webpage (so it only runs after the DOM has loaded), i.e.
  * <script src="yourfolder/gallery-modal-scripts.js"></script>
  */
 const imageGalleryModal = (function() {
-	//gallery is closed by default, therefore the index is set to a negative value
+	// gallery is closed by default, therefore the index is set to a negative value
 	let currentImageIndex = -1;
 
 	/* IMPORTANT:
@@ -17,11 +14,9 @@ const imageGalleryModal = (function() {
 	 */
 	let galleryImages = document.querySelectorAll('.gallery-modal-ready img');
 
-
 	//------Exported Functions------
 
 	const openGalleryModal = function(e) {
-		//end operation if click event target is not an image
 		if(e.target.nodeName !== 'IMG') return;
 		
 		loadGalleryImage(e);
@@ -37,7 +32,6 @@ const imageGalleryModal = (function() {
 	};
 
 	const prevGalleryImage = function() {
-		//if displaying the first image, end operation
 		if(currentImageIndex == 0) return;
 
 		currentImageIndex--;
@@ -45,18 +39,17 @@ const imageGalleryModal = (function() {
 	};
 
 	const nextGalleryImage = function() {
-		//if displaying the last image, end operation
 		if(currentImageIndex + 1 ==  galleryImages.length) return;
 
 		currentImageIndex++;
 		openGalleryImage();
 	};
 
-	//opens an image based on the click event target
+	// opens an image based on the click event target
 	const loadGalleryImage = function(e) {
 		document.querySelector('.gallery-modal__image').src = e.target.src;
 
-		//iterate through images to find the current image's index (its position in order)
+		// iterate through images to find the current image's index (its position in order)
 		for(let x = 0; x < galleryImages.length; x++) {
 			if(galleryImages.item(x).src == e.target.src) currentImageIndex = x;
 		}
@@ -65,7 +58,7 @@ const imageGalleryModal = (function() {
 		showFeaturesIfHidden();
 	};
 
-	//opens an image based on its index in the gallery image list
+	// opens an image based on its index in the gallery image list
 	const openGalleryImage = function() {
 		let newImgSrc = galleryImages.item(currentImageIndex).src;
 		document.querySelector('.gallery-modal__image').src = newImgSrc;
@@ -84,7 +77,7 @@ const imageGalleryModal = (function() {
 			return false;
 		}
 
-		//update the list of gallery images
+		// update the list of gallery images
 		galleryImages = document.querySelectorAll('.gallery-modal-ready img');
 		return true;
 	}
@@ -94,7 +87,6 @@ const imageGalleryModal = (function() {
 		galleryImages = null;
 		return true;
 	}
-
 
 	//------Helper Functions------
 
@@ -106,7 +98,7 @@ const imageGalleryModal = (function() {
 		document.querySelector('.gallery-modal__container').classList.toggle('gallery-modal_display');
 	}
 
-	//hides or shows all of the gallery modal buttons and the modal index
+	// hides or shows all of the gallery modal buttons and the modal index
 	function toggleModalFeatures() {
 		let buttons = document.querySelectorAll('.gallery-modal__button');
 		for(const button of buttons) {
@@ -116,9 +108,9 @@ const imageGalleryModal = (function() {
 	}
 
 	function showFeaturesIfHidden() {
-		//no need to check every feature individually since they're always toggled together
+		// no need to check every feature individually since they're always toggled together
 		let feature = document.querySelector('.gallery-modal__index');
-		//show features if they're currently hidden
+		// show features if they're currently hidden
 		if(feature.classList.contains('gallery-modal_hide-features')) {
 			toggleModalFeatures();
 			return true;
@@ -127,7 +119,7 @@ const imageGalleryModal = (function() {
 	}
 
 	const handleInput = function(keystroke) {
-		//if the modal isn't open, exit
+		// if the modal isn't open, exit
 		if(currentImageIndex == -1) return;
 		
 		switch(keystroke) {
@@ -143,17 +135,15 @@ const imageGalleryModal = (function() {
 		}
 	}
 
-	//adjusts modal content to reflect the image index, e.g. displaying 2 / 5 
+	// adjusts modal content to reflect the image index, e.g. displaying 2 / 5 
 	function imageIndexDidUpdate() {
 		const imageIndexString = `${currentImageIndex + 1} / ${galleryImages.length}`;
-		//console.log(imageIndexString);
 		document.querySelector('.gallery-modal__index').innerText = imageIndexString;
 	};
 
+	//------ Initialize event listeners ------
 
-	//------ Initialize listeners on buttons and gallery ------
-
-	//modal buttons
+	// modal buttons
 	document.querySelector('.gallery-modal__button_close').addEventListener('click', closeGalleryModal);
 	document.querySelector('.gallery-modal__button_close').addEventListener('focus', showFeaturesIfHidden);
 
@@ -168,10 +158,9 @@ const imageGalleryModal = (function() {
 	
 	document.querySelector('.gallery-modal__button_invisible').addEventListener('click', toggleModalFeatures);
 
-	//listen for clicks on gallery elements
+	// listen for clicks on gallery elements
 	readyGalleryListener();
 
-	// event listener; lets arrows keys handle gallery navigation and esc close the modal
 	document.addEventListener('keyup', function(e) {
 	    let allowedKeys = {
 	        37: 'left',
@@ -191,3 +180,4 @@ const imageGalleryModal = (function() {
 		unreadyGallery: unreadyGalleryListener
 	}
 }());
+
